@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "836296147482",
+    "project_id": "sahyadrisiri-20e5c",
+    "storage_bucket": "sahyadrisiri-20e5c.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:836296147482:android:54eac18b884638057e07a3",
+        "android_client_info": {
+          "package_name": "com.mindmatrix.sahyadrisiri"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4uZDjk2eANop2G8tvhv9CgcWTe0rY8V8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
