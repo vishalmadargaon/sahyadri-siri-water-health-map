@@ -1,16 +1,19 @@
+import java.util.Properties
+
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
     id("com.google.gms.google-services")
 }
 
-val localProperties = java.util.Properties().apply {
+val localProperties = Properties().apply {
     val file = rootProject.file("local.properties")
-    if (file.exists()) file.inputStream().use(::load)
+    if (file.exists()) file.inputStream().use { load(it) }
 }
 val geminiApiKey = (localProperties.getProperty("GEMINI_API_KEY")
     ?: project.findProperty("GEMINI_API_KEY") as? String)
     .orEmpty()
+val publicDemoApk = project.findProperty("PUBLIC_DEMO_APK") == "true"
 
 android {
     namespace = "com.sahyadrisiri.watermapper"
@@ -23,7 +26,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        buildConfigField("String", "GEMINI_API_KEY", "\"$geminiApiKey\"")
+        buildConfigField("String", "GEMINI_API_KEY", "\"${if (publicDemoApk) "" else geminiApiKey}\"")
     }
 
     buildFeatures {
